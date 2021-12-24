@@ -1,7 +1,8 @@
+import s from './App.module.css';
 import React, { Component } from 'react';
-import Section from './components/Section/section.jsx';
+import Section from './components/Section/section.styled.jsx';
 import Statistics from './components/Statistics/statistics.jsx';
-import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions.jsx';
+import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions.styled.jsx';
 import Notification from './components/Notification/Notification.jsx';
 
 export default class App extends Component {
@@ -40,7 +41,7 @@ export default class App extends Component {
 
     const objKey = Object.keys(this.state);
     return (
-      <>
+      <div className={s.app}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={objKey}
@@ -61,7 +62,7 @@ export default class App extends Component {
             />
           </Section>
         )}
-      </>
+      </div>
     );
   }
 }
