@@ -12,7 +12,7 @@ const Button = styled.button`
   border-radius: 20%;
   font-size: 14px;
   color: #8b4513;
-  margin-right: 16px;
+  margin-right: 15px;
   &:hover,
   &:focus-visible {
     color: #fff;
