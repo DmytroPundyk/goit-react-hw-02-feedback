@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react';
-import shortid from 'shortid';
 import PropTypes from 'prop-types';
 
 const Buttons = styled.div`
@@ -21,24 +20,22 @@ const Button = styled.button`
   }
 `;
 
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
     <Buttons>
-      {options.map(option => (
-        <Button
-          key={shortid.generate()}
-          type="button"
-          name={option}
-          onClick={onLeaveFeedback}
-        >
-          {option}
-        </Button>
-      ))}
+      <Button type="button" name="good" onClick={onLeaveFeedback}>
+        Good
+      </Button>
+      <Button type="button" name="neutral" onClick={onLeaveFeedback}>
+        Neutral
+      </Button>
+      <Button type="button" name="bad" onClick={onLeaveFeedback}>
+        Bad
+      </Button>
     </Buttons>
   );
 };
 FeedbackOptions.propTypes = {
-  options: PropTypes.array.isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
 
